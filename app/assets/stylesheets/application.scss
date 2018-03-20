@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+*
+{
+  font-family: Georgia, serif;
+}
+h1
+{
+  font-family: Impact, Charcoal, sans-serif;
+}
+h2
+{
+  font-size: 3.5em;
+  font-family: Impact, Charcoal, sans-serif;
+  text-transform: uppercase;
+}
+small
+{
+  color: #000!important;
+  font-family: Impact, Charcoal, sans-serif;
+}
+header
+{
+  box-shadow: 0px 4px 16px grey;
+}
+header span
+{
+  color: #00b5af;
+  font-family: Impact, Charcoal, sans-serif;
+}
+p
+{
+  font-family: 'Libre Baskerville', serif;
+}
+h3
+{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: Impact, Charcoal, sans-serif;
+}
+.fa-quote-left
+{
+  padding-right: 10px;
+  font-size: 1.5em;
+  color: #00b5af;
+}
+.fa-user, .fa-dollar-sign
+{
+  font-size: 8.7em;
+  text-align: center;
+  display: block!important;
+  margin-top: .5em;
+  color: #00b5af;
+}
