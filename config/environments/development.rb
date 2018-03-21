@@ -56,4 +56,13 @@ Rails.application.routes.default_url_options[:host] = 'localhost:3000'
 config.action_mailer.perform_deliveries = false
 config.action_mailer.raise_delivery_errors = true
 config.action_mailer.default :charset => "utf-8"
+config.action_mailer.smtp_settings = {
+    address:        'smtp.gmail.com',
+    port:           '587',
+    authentication: :plain,
+    user_name:      'joshcone@googlemail.com',
+    password:       'Puppydog123',
+    domain:         'gmail.com',
+    openssl_verify_mode: 'none'
+  }
 end
