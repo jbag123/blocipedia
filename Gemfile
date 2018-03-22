@@ -45,7 +45,7 @@ group :development, :test do
   gem "ffaker"
   gem "factory_girl_rails"
 end
-#bootstrap
+
 gem 'bootstrap-sass'
 
 group :test do
@@ -53,3 +53,4 @@ group :test do
 end
 
 gem 'devise'
+gem 'pundit'

@@ -1,4 +1,5 @@
 class WikisController < ApplicationController
+
   def index
     @wikis = Wiki.all
   end
@@ -12,10 +13,7 @@ class WikisController < ApplicationController
   end
 
   def create
-    @wiki = Wiki.new
-    @wiki.title = params[:wiki][:title]
-    @wiki.body = params[:wiki][:body]
-
+    @wiki = Wiki.new(wiki_params)
     if @wiki.save
        flash.now[:notice] = "Your wiki was saved."
        redirect_to @wiki
@@ -30,10 +28,9 @@ class WikisController < ApplicationController
   end
 
   def update
-    @wiki = Wiki.new
-    @wiki.title = params[:wiki][:title]
-    @wiki.body = params[:wiki][:body]
-
+    @wiki = Wiki.find(params[:id])
+    @wiki.assign_attributes(wiki_params)
+      authorize @wiki
     if @wiki.save
        flash.now[:notice] = "Your wiki was updated."
        redirect_to @wiki
@@ -53,4 +50,9 @@ class WikisController < ApplicationController
       render :show
     end
   end
+
+  private
+    def wiki_params
+      params.require(:wiki).permit(:title, :body, :public)
+    end
 end
