@@ -1,0 +1,7 @@
+<%= form_for @wiki do |w| %>
+  <%= w.label :title  %>
+  <%= w.text_field :title %>
+  <%= w.label :body  %>
+  <%= w.text_area :body %>
+  <%= w.submit "Save" %>
+<% end %>
