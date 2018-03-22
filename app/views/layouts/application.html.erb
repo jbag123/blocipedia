@@ -28,7 +28,6 @@
     <% if user_signed_in? %>
     <p>Signed in as: <strong><%= current_user.email %></strong>
     <%= link_to 'Edit profile', edit_user_registration_path(@user), :class => 'navbar-link' %></p>
-    <p>Admin: <strong><%= current_user.standard? %></strong><br>
     <ul class="nav nav-tabs">
      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
     </ul>
