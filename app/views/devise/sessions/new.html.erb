@@ -1,9 +1,4 @@
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
         <h2>Log in</h2>
-
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
             <%= f.label :email %><br />
@@ -31,8 +26,3 @@
     </div>
   </div>
 </div>
-<script>
-$(window).on('load',function(){
-    $('#myModal').modal({backdrop: 'static', keyboard: false});
-});
-</script>
