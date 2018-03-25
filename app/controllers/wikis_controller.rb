@@ -53,10 +53,6 @@ class WikisController < ApplicationController
 
   private
     def wiki_params
-<<<<<<< Updated upstream
-      params.require(:wiki).permit(:title, :body, :public)
-=======
       params.require(:wiki).permit(:title, :body)
->>>>>>> Stashed changes
     end
 end
