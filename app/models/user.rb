@@ -4,6 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   after_initialize :init
+  validate :payment, on: :create
+
+  private
+
+  def payment
+
+  end
 
   def init
    self.role ||= :standard

@@ -3,7 +3,7 @@ class WikiPolicy < ApplicationPolicy
     true
   end
   def show?
-    user.present?
+    true
   end
   def edit?
     user.present?
@@ -17,7 +17,10 @@ class WikiPolicy < ApplicationPolicy
   def create?
     user.present?
   end
+  def destroy?
+    user.present?
+  end
   def delete?
-    return true if user.present? && user == article.user
+    return true if user.present? && user == wiki.user
   end
 end
