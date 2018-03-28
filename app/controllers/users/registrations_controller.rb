@@ -10,9 +10,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   build_resource(registration_params)
-  # end
+  def create
+    redirect_to charges_url :controller => 'charges'
+    @registration = Registration.new registration_params.merge(email: stripe_params["stripeEmail"], card: stripe_params["stripeToken"])
+    raise "Please, check registration errors" unless @registration.valid?
+    @registration.process_payment
+    @registration.save
+    redirect_to @registration, notice: 'Registration was successfully created.'
+    rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to root_path
+  end
 
   # GET /resource/edit
   # def edit
