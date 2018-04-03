@@ -21,14 +21,8 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="field">
-    <%= f.label :role %><br />
-    <%= f.select :role, User.roles.keys.to_a %>
-  </div>
-
   <div class="actions">
     <%= f.submit "Sign up" %>
-    <script class='stripe-button' src="https://checkout.stripe.com/checkout.js" data-key="pk_test_nLuzR5gLuQs7xp2L3KZLseGt" data-amount="100_000" ></script>
   </div>
 <% end %>
 
