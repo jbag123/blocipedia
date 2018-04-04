@@ -30,6 +30,8 @@
     <%= link_to 'Edit profile', edit_user_registration_path(@user), :class => 'navbar-link' %></p>
     <ul class="nav nav-tabs">
       <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+      <li><%= link_to 'View Wikis', wikis_path %></li>
+      <li><%= link_to 'Create Wikis', new_wiki_path %></li>
     </ul>
     <% else %>
     <ul class="nav nav-tabs">

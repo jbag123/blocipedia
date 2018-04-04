@@ -16,9 +16,13 @@ class WikisController < ApplicationController
   def create
     @wiki = Wiki.new(wiki_params)
     authorize @wiki
-    if @wiki.save
-       flash.now[:notice] = "Your wiki was saved."
-       redirect_to @wiki
+    if @wiki.save && current_user.premium?
+      @wiki.update_attribute(:private, true)
+      flash.now[:notice] = "Your wiki was saved."
+      redirect_to @wiki
+    elsif @wiki.save
+      flash.now[:notice] = "Your wiki was saved."
+      redirect_to @wiki
     else
       flash.now[:alert] = "Error, your wiki was not created. Please try again."
       render :new

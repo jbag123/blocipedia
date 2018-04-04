@@ -1,5 +1,12 @@
 <%= form_for @wiki do |f| %>
   <div class="form-group">
+    <% if current_user.premium? %>
+      <div class="form-group">
+        <%= f.label :private, class: 'checkbox' do %>
+          <%= f.check_box :private %> Private wiki
+        <% end %>
+      </div>
+  <% end %>
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
   </div>

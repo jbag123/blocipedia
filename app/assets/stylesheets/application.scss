@@ -29,6 +29,15 @@ h2
   font-family: Impact, Charcoal, sans-serif;
   text-transform: uppercase;
 }
+form
+{
+  width: 51em;
+  margin: 0 auto;
+}
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"]
+{
+  margin-left: 96px;
+}
 small
 {
   color: #000!important;
