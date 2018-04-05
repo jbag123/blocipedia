@@ -42,7 +42,7 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'rails-controller-testing'
-  gem "ffaker"
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   gem "factory_girl_rails"
 end
 
