@@ -5,12 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   after_initialize :init_role
   has_many :wikis, dependent: :destroy
+  accepts_nested_attributes_for :wikis
 
   enum role: [:standard, :premium, :admin]
 
   private
 
-  def init_role 
+  def init_role
    self.role ||= :standard
   end
 end
