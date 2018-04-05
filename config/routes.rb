@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
   resources :wikis
 
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
 
   resources :users, only: [:update]
+
+  resources :charges, only: [:new, :create]
+
+  match "users/:id/downgrade" => "users#downgrade", :as => "downgrade_user", via: [:get, :post]
 
   root 'welcome#index'
 

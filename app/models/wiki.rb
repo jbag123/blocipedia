@@ -8,3 +8,4 @@ class Wiki < ApplicationRecord
     self.private ||= false
   end
 end
+ 
