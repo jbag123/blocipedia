@@ -18,7 +18,7 @@ class WikisController < ApplicationController
   end
 
   def create
-    @wiki = Wiki.new(wiki_params)
+    @wiki = Wiki.new(wiki_params.merge(user_id: current_user.id))
     authorize @wiki
     if @wiki.save && current_user.premium?
       @wiki.update_attribute(:private, true)
@@ -65,6 +65,6 @@ class WikisController < ApplicationController
 
   private
     def wiki_params
-      params.require(:wiki).permit(:title, :body)
+      params.require(:wiki).permit(:title, :body, :user_id)
     end
 end

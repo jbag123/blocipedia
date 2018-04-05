@@ -42,7 +42,7 @@
 <h3>Cancel or downgrade account</h3>
 
 <% if current_user.premium? %>
-  <%= link_to "Downgrade", downgrade_user_path(current_user),data: { confirm: "Are you sure?" }, class: 'btn btn-warning' %>
+  <%= link_to "Downgrade", downgrade_user_path(current_user),data: { confirm: "Are you sure? Your private wikis will become private!" }, class: 'btn btn-warning' %>
 <% end %>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
