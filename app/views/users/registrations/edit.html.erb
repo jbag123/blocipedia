@@ -1,5 +1,4 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
 <% if current_user.standard? %>
   <%= button_to "Upgrade", charges_path, class: 'btn btn-success' %>
 <% end %>
