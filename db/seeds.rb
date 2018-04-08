@@ -12,7 +12,6 @@
   password: Faker::Internet.password(10, 20)
 )
 end
-users = User.all
 
 premium_user = User.create!(
   email: 'premium@example.com',
@@ -20,20 +19,10 @@ premium_user = User.create!(
   role: 'premium',
 )
 
-# Create wikis
-25.times do
-  Wiki.create!(
-  title: Faker::Hipster.unique.word,
-  body: Faker::Hipster.paragraph,
-  user: users.sample
-  )
-end
-
-
 (1..10).to_a.each do |num|
   Wiki.create!(
     title: "This is the title for #{num}",
-    body: Faker::Hipster.paragraph,
+    body:   %Q{> This is body text for my wiki! },
     user: premium_user,
     private: true,
   )

@@ -1,8 +1,13 @@
+<div class="container">
 <h1>All Wikis</h1>
   <% @wikis.each do |wiki| %>
     <div class="media">
       <div class="media-body">
-        <%= link_to wiki.title, wiki %>
+        <p>
+          <%= link_to markdown(wiki.title), wiki %>
+          <%= markdown(wiki.body) %>
+        </p>
       </div>
     </div>
 <% end %>
+</div>
