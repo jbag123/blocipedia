@@ -5,8 +5,12 @@
         <%= f.label :private, class: 'checkbox' do %>
           <%= f.check_box :private %> Private wiki
         <% end %>
+        <% if @wiki.private == true %>
+          <%= f.label :Collaborators %>
+          <%= f.collection_check_boxes :user_ids, User.where.not(role: 'standard'), :id, :email %>
+        <% end %>
       </div>
-  <% end %>
+    <% end %>
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
   </div>
