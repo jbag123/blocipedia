@@ -1,6 +1,7 @@
 class Wiki < ApplicationRecord
-  belongs_to :user, required: false
   after_initialize :init
+  has_many :collaborators
+  has_many :users, through: :collaborators
 
   private
 
@@ -8,4 +9,3 @@ class Wiki < ApplicationRecord
     self.private ||= false
   end
 end
- 
