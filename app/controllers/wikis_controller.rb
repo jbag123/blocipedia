@@ -16,8 +16,8 @@ class WikisController < ApplicationController
   def create
     @wiki = Wiki.new(wiki_params.merge(user_id: current_user.id))
     authorize @wiki
+    @wiki.update_attribute(:private, true)
     if @wiki.save && current_user.premium?
-      @wiki.update_attribute(:private, true)
       flash.now[:notice] = "Your wiki was saved."
       redirect_to @wiki
     elsif @wiki.save

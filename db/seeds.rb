@@ -13,18 +13,11 @@
 )
 end
 
-premium_user = User.create!(
-  email: 'premium@example.com',
-  password: 'password',
-  role: 'premium',
-)
-
 (1..10).to_a.each do |num|
   Wiki.create!(
     title: "This is the title for #{num}",
     body:   %Q{> This is body text for my wiki! },
-    user: premium_user,
-    private: true,
+    private: true
   )
 end
 
