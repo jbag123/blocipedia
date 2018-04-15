@@ -5,8 +5,6 @@
         <%= f.label :private, class: 'checkbox' do %>
           <%= f.check_box :private %> Private wiki
         <% end %>
-        <%= f.label :Collaborators %>
-        <%= f.collection_check_boxes :user_ids, User.where.not(role: 'standard'), :id, :email %>
       </div>
     <% end %>
     <%= f.label :title %>

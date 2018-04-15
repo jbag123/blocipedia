@@ -10,6 +10,6 @@
   </div>
   <div class="col-md-8">
     <%= render partial: 'wikis/form' %>
-    <%= render partial: 'collaborators/form' if !@wiki.collaborators.save, locals: { wiki: @wiki } %>
+    <%= render partial: 'collaborators/form', locals: { wiki: @wiki } %>
   </div>
 </div>
