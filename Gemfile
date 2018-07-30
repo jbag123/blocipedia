@@ -52,3 +52,4 @@ gem 'pundit'
 gem 'stripe'
 gem 'figaro', '1.0'
 gem "redcarpet"
+gem 'friendly_id', '~> 5.2.0'
